@@ -10,3 +10,22 @@ Yes, this is great way to bootstrap a boilerplate React project and it is introd
 At some point we faced a situation when you need some build/packeging tools around your React project. 
 
 I hope this article will help you into setting basic project structure and build configuration. Enough, let's start our base setup for React(Webpack, Babel, Hot Reloading) project.
+
+## Table of Contents
+
+- Project Setup
+- Webpack Setup
+  - Hot Reloading
+- Babel Setup
+- React Setup
+
+## Project Setup
+
+Let's start with the begining, you'll need some development env. setup to start. So, make sure you have an editor and terminal on your computer, also check if you have an installed version of [node and npm](https://nodejs.org/en/).
+
+In this chapter we will focus on setting up the project.
+
+## Webpack Setup
+### Hot Reloading
+## Babel Setup
+## React Setup
