@@ -65,6 +65,58 @@ If you look at the content of the body, you can see:
 2. _id="app"_ entry point for React root component
 
 ## Webpack Setup
+
+Now, it's time to take a look at [Webapack](https://webpack.js.org/) the module bundler and build tool. Also we'll use [webpack-dev-server](https://github.com/webpack/webpack-dev-server) as local development server. Development server will watch for our changes and rerun the bundler.
+
+We need to install this two packages:
+
+_root folder_
+```bat
+npm install --save-dev webpack webpack-dev-server
+```
+_Tip: you can use npm i instead of npm install._
+
+```--save-dev``` will add these packages as dev dependencies in _package.json_ file. You may notice that new folder has been created _node_modules_, this folder contains installed third party dependencies. Our project structure now should look similar prsented bellow
+
+```
+- dist
+-- index.html
+- node_modules
+- package.json
+```
+
+Ok, we installed webpack. Now, we need to create webpack config file ```webpack.confg.js```.
+
+_Tip: as you may noticed before you can create files by using touch command_ - ```touch FILENAME```
+
+_root folder_
+
+```bat
+touch webpack.config.js
+```
+
+Open created file and provide followin content
+
+_webpack.config.js_
+```
+module.exports = {
+  entry: [
+    './src/index.js'
+  ],
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: './dist'
+  }
+};
+```
+
+It is important to understand what is going on so far. This tells webpack that in ```src``` folder our main application file (```index.js```) is the entry point, and bundled application (```bundle.js```) should be outputted in our already set up ```dist``` folder. As mentioned before ```dist``` folder will be used to serve our application.
+
+
 ### Hot Reloading
 ## Babel Setup
 ## React Setup
