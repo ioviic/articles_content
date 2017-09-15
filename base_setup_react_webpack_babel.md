@@ -23,7 +23,14 @@ I hope this article will help you into setting basic project structure and build
 
 Let's start with the begining, you'll need some development env. setup to start. So, make sure you have an editor and terminal on your computer, also check if you have an installed version of [node and npm](https://nodejs.org/en/).
 
-In this chapter we will focus on setting up the project.
+In this chapter we will focus on setting up the project. Open you terminal and create a folder for our project, after initialize it as npm project.
+
+```
+mkdir base-react-boilerplate
+cd base-react-boilerplate
+npm init -y
+```
+```-y``` will initialize our projects with default configurations and generates the _package.json_ file. 
 
 ## Webpack Setup
 ### Hot Reloading
