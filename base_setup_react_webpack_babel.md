@@ -13,11 +13,11 @@ I hope this article will help you into setting basic project structure and build
 
 ## Table of Contents
 
-- Project Setup
-- Webpack Setup
-  - Hot Reloading
-- Babel Setup
-- React Setup
+- [Project Setup](https://github.com/ioviic/articles_content/blob/base-setup-for-webpack-babel/base_setup_react_webpack_babel.md#project-setup)
+- [Webpack Setup](https://github.com/ioviic/articles_content/blob/base-setup-for-webpack-babel/base_setup_react_webpack_babel.md#webpack-setup)
+  - [Hot Reloading](https://github.com/ioviic/articles_content/blob/base-setup-for-webpack-babel/base_setup_react_webpack_babel.md#hot-reloading)
+- [Babel Setup](https://github.com/ioviic/articles_content/blob/base-setup-for-webpack-babel/base_setup_react_webpack_babel.md#babel-setup)
+- [React Setup](https://github.com/ioviic/articles_content/blob/base-setup-for-webpack-babel/base_setup_react_webpack_babel.md#react-setup)
 
 ## Project Setup
 
