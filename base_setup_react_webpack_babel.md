@@ -68,7 +68,7 @@ If you look at the content of the body, you can see:
 
 Now, it's time to take a look at [Webapack](https://webpack.js.org/) the module bundler and build tool. Also we'll use [webpack-dev-server](https://github.com/webpack/webpack-dev-server) as local development server. Development server will watch for our changes and rerun the bundler.
 
-We need to install this two packages:
+We need to install thess two packages:
 
 _root folder_
 ```bat
@@ -85,7 +85,7 @@ _Tip: you can use npm i instead of npm install._
 - package.json
 ```
 
-Ok, we installed webpack. Now, we need to create webpack config file ```webpack.confg.js```.
+Ok, we installed webpack. Now, we need to create webpack config file ```webpack.config.js```.
 
 _Tip: as you may noticed before you can create files by using touch command_ - ```touch FILENAME```
 
@@ -95,10 +95,10 @@ _root folder_
 touch webpack.config.js
 ```
 
-Open created file and provide followin content
+Open created file and provide following content
 
 _webpack.config.js_
-```
+```javascript
 module.exports = {
   entry: [
     './src/index.js'
