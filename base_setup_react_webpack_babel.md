@@ -1,0 +1,8 @@
+# Base setup for React-Webpack-Babel
+
+As you all know, a lot of React boilerplate projects around there but most of the times these boilerplates not fits our needs. In this articale I'll not reflect how to boilerplate a project, 
+but I'll try to show you how to setup your own project without boilerplate project.
+
+In this article we'll setup a project using our lovely React framework, packaging it with Webpack and of course we'll deal with Babel and Hot Realoading.
+
+But, Why not [create-react-app](https://github.com/facebookincubator/create-react-app)?
