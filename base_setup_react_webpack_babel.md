@@ -25,7 +25,7 @@ Let's start with the begining, you'll need some development env. setup to start.
 
 In this chapter we will focus on setting up the project. Open you terminal and create a folder for our project, after initialize it as npm project.
 
-```
+```terminal
 mkdir base-react-boilerplate
 cd base-react-boilerplate
 npm init -y
