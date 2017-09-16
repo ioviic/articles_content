@@ -116,7 +116,60 @@ module.exports = {
 
 It is important to understand what is going on so far. This tells webpack that in ```src``` folder our main application file (```index.js```) is the entry point, and bundled application (```bundle.js```) should be outputted in our already set up ```dist``` folder. As mentioned before ```dist``` folder will be used to serve our application.
 
+We are missing source files. Let's add them. 
 
+But first we gonna create the ```src``` folder, where we put source code files. After create ```index.js```, our entry point.
+
+_root folder_
+
+
+```bat
+mkdir src
+cd src
+touch index.js
+``` 
+Open newly created ```index.js``` file and add some ```console.log```
+
+```javascript
+console.log('Base setup for React-Webpack-Babel');
+```
+
+Now folder structure should be similar to this structure.
+
+```bat
+- dist
+-- index.html
+- node_modules
+- src
+-- index.js
+- package.json
+- webpack.config.js
+```
+
+We added some source files, open ```package.json``` file and add 'start' script.
+```javascript
+...
+"scripts": {
+  "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
+  ...
+},
+...
+
+```
+We tell that we will use webpack-dev-server with configuration file ```webpack.config.js```.
+
+Now we are able to start our project
+
+_terminal root folder_
+
+```bat
+npm start
+```
+
+Open in your browser [localhost:8080](http://localhost:8080), and check console in development tools. 
+
+To recap, now we are serving the app via Webpack, we bundle the ```src/index.js``` into ```bundle.js``` that we used in ```dist/index.html``` and we are able to see the ```console.log()``` text. Right now we have only one source file which is ```src/index.js```, but we gonna to add more files and import them into ```index.js``` file later on, which will get bundle automatically by Webpack into ```bundle.js```.
+ 
 ### Hot Reloading
 ## Babel Setup
 ## React Setup
