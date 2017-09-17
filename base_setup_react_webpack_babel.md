@@ -224,5 +224,113 @@ _root folder_
 ```
 npm start
 ```
+
+If look to the browser [localhost:8080](http://localhost:8080), and check console in development tools, same ```console.log()``` text is showen, but if changes the text of it ```index.js``` file you should see updated content in you development console.
+
 ## Babel Setup
+
+Basically [Babel](https://babeljs.io) will transpile our fancy ES6 to ES5 which can be understood by browsers (some browsers can execute ES6 already, but most of them still can’t).
+
+_root folder_
+
+```bat
+npm install --save-dev babel-core babel-loader babel-preset-es2015
+```
+I want to mention here that, not only ES6 features Babel can transpile, but also the next generations of ES. **WOW**
+
+For example if you want to use feature as [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) you can do this via [stages](https://babeljs.io/docs/plugins/preset-stage-0/).
+
+_root folder_
+```bat
+npm install --save-dev babel-preset-stage-2
+```
+
+For the sake of convenience, as soon as we use React we need to add more configuation which will React ```*.jsx``` files to ```*.js```files.
+
+_root folder_
+```bat
+npm install --save-dev babel-preset-react
+```to 
+
+With these intalled we have to adjust or ```package.json``` and ```webpack.config.js``` and let Babel to work.
+
+Add in ```package.json```:
+_package.json_
+
+```json
+...
+"babel": {
+  "presets": [
+    "es2015",
+    "react",
+    "stage-2"
+  ]
+},
+...
+```
+These changes include all packages we've installed.
+
+_webpack.config.js_
+```javascript
+module.exports = {
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './src/index.js'
+  ],
+  ...
+  module: {
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'react-hot-loader!babel-loader'
+    }]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
+  ...
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  }
+};
+```
+our application can't start now, cause it dosen't now about React. So let's dive in and create our first React component.
+
 ## React Setup
+
+We have to install two more packages and fix the start of our app.
+
+_root folder_
+
+```bat
+npm install --save react react-dom
+```
+
+Open ```src/index.js``` file and implement our first React component. **WIIIIII**
+
+_src/index.js_
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const title = 'Base setup for React-Webpack-Babel';
+
+ReactDOM.render(
+  <div>{title}</div>,//our jsx component to render
+  document.getElementById('app')
+);
+
+module.hot.accept();
+```
+
+You should be able to see the output in your browser rather than in a developer console now.
+
+What we can see here, is two things (1) that ```ReactDOM.render``` need first the ```jsx``` to render, (2) second the root node where your output should be appended, because everything inside it will be managed by React DOM.
