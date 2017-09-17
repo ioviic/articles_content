@@ -171,5 +171,58 @@ Open in your browser [localhost:8080](http://localhost:8080), and check console 
 To recap, now we are serving the app via Webpack, we bundle the ```src/index.js``` into ```bundle.js``` that we used in ```dist/index.html``` and we are able to see the ```console.log()``` text. Right now we have only one source file which is ```src/index.js```, but we gonna to add more files and import them into ```index.js``` file later on, which will get bundle automatically by Webpack into ```bundle.js```.
  
 ### Hot Reloading
+
+Let's make our developer life easier and add [react-hot-loader](https://github.com/gaearon/react-hot-loader). Why? Beacuse it enables fast feedback in development process, whenever you change something in your source code, the change will apply in your app running in the browser but _**not realoading the entire page**_, and this makes id __HOT__ :D. It use Hot Module Replacement(or [HMR](https://webpack.js.org/guides/hot-module-replacement/)) feature of Webpack, and i'll say this is the most powerfull feature of Webpack, it allows all kinds of modules to be updated at runtime without the need for a full refresh. pretty neat, right.
+
+_root folder_
+
+```bat
+npm install --save-dev react-hot-loader
+```
+
+Now, we need to change a little bit ```webpack.config.js``` file.
+
+_webpack.config.js_
+```javascript
+module.exports = {
+  entry: [
+  ...
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+  ...
+    './src/index.js'
+  ],
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: './dist',
+    ...
+    hot: true
+    ...
+  }
+};
+```
+
+Add
+
+```src/index.js```
+
+```javascript
+console.log('Base setup for React-Webpack-Babel');
+...
+module.hot.accept();
+...
+```
+in the ```src/index.js```file an to define that hot reloading is available and should be used.
+
+Let's start app now
+_root folder_
+
+```
+npm start
+```
 ## Babel Setup
 ## React Setup
