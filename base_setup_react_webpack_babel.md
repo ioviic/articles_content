@@ -1,8 +1,8 @@
-# Base setup for React-Webpack-Babel
+# Base setup for React-Webpack-Babel-Hot-Reloading
 
-As you may know, a lot of React boilerplate projects are around there, but most of the them not fit our needs. In this articale I'll not reflect how to boilerplate a project, I'll try to show you how to setup your own project without boilerplate project.
+As you may know, a lot of React boilerplate projects are around there, but most of the them not fit our needs. In this articale I'll not reflect how to boilerplate a project, I'll try to show you how to setup your own project.
 
-In this article we'll setup a project using our lovely React framework, packaging it with Webpack and of course we'll deal with amazing
+In this article we'll setup a project using our lovely React framework, bundle it with Webpack and of course we'll deal with amazing
 Babel and Hot Realoading feature.
 
 But, Why not [create-react-app](https://github.com/facebookincubator/create-react-app)? 
@@ -137,7 +137,7 @@ touch index.js
 Open newly created ```index.js``` file and add some ```console.log```
 
 ```javascript
-console.log('Base setup for React-Webpack-Babel');
+console.log('======Base setup for React-Webpack-Babel======');
 ```
 
 Now folder structure should be similar to this structure.
@@ -216,7 +216,7 @@ Add in ```src/index.js``` following:
 
 _src/index.js_
 ```javascript
-console.log('Base setup for React-Webpack-Babel');
+console.log('======Base setup for React-Webpack-Babel======');
 ...
 module.hot.accept();
 ...
